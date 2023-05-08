@@ -1,4 +1,33 @@
 class Consonant :
+    """Représente une consonne
+
+    Class Attributes : 
+        - consonants    : dict{str:Consonant}   : Dictionnaire
+
+    Attributes : 
+        - symbol        :   str     : Symbole qui représente
+
+        - stop          :   bool    : Stop  
+        - fric          :   bool    : Fricative  
+        - liquid        :   bool    : Liquide  
+        - nasal         :   bool    : Nasale  
+        
+        - voiced        :   bool    : Voisée
+        - unvoiced      :   bool    : Non voisée
+
+        - labial        :   bool    : Labiale  
+        - dental        :   bool    : Dentale  
+        - alveo         :   bool    : Alvéolaire  
+        - postalveo     :   bool    : Post-alvéolaire  
+        - palatal       :   bool    : Palatale  
+        - velar         :   bool    : Vélaire  
+        - glottal       :   bool    : Glottale  
+
+    Raises:
+        Exception: Si pas exactement 1 parmi stop,fric,liquid,nasal
+        Exception: Si pas exactement 1 parmi voiced,unvoiced
+        Exception: Si pas exactement 1 parmi labial,dental,alveo,postalveo,palatal,velar,glottal
+    """
     
     consonants = {}
 
@@ -19,23 +48,25 @@ class Consonant :
                 glottal     =False,
                 ):
 
-        self.symbol = symbol
-
+        # Gestion des exceptions
         if(sum([stop,fric,liquid,nasal])!=1):
-            raise Exception('Mauvais type stop fric liquid nasal')
-        
+            raise Exception('Mauvais type stop fric liquid nasal')                
         if(sum([voiced,unvoiced])!=1):
             raise Exception('Mauvais type voiced unvoiced')
-
         if(sum([labial,dental,alveo,postalveo,palatal,velar,glottal])!=1):
             raise Exception('Mauvais type labial alveo postalveo palatal velar glottal dental')
+
+        # Attributs d'instances
+        self.symbol = symbol
 
         self.stop = stop
         self.fric = fric
         self.liquid = liquid
         self.nasal = nasal
+
         self.voiced = voiced
         self.unvoiced = unvoiced
+
         self.labial = labial
         self.dental = dental
         self.alveo = alveo
@@ -44,6 +75,7 @@ class Consonant :
         self.velar = velar
         self.glottal = glottal
 
+        # Update des attributs de classe
         Consonant.consonants[self.symbol]=self
 
 class Vowel : 
