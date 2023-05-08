@@ -1,4 +1,4 @@
-from LinguaPythonica.Framework.words_class import Word
+from LinguaPythonica.Framework.Words import Word
 
 from LinguaPythonica.RedDjinn.concepts_specific import (
     MOODS,

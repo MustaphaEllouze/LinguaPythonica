@@ -3,7 +3,7 @@ from LinguaPythonica.RedDjinn.sounds import (
     VOWE_list,
 )
 
-from LinguaPythonica.Framework.words_class import (
+from LinguaPythonica.Framework.Words import (
     Word,
     Verb,
 )

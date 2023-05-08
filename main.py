@@ -6,7 +6,7 @@ from LinguaPythonica.RedDjinn.sounds import (
     CONS_list,
     VOWE_list,
 )
-from LinguaPythonica.Framework.words_class import (
+from LinguaPythonica.Framework.Words import (
     Word,
     Verb,
 )
