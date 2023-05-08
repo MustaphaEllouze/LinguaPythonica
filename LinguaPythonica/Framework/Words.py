@@ -137,20 +137,7 @@ class Verb(Word,ABC):
         )
     
     @abstractmethod
-    def conjugate(self,
-                 tense,
-                 name_tense):
-        first_part = list(str(self)[:-1])
-        second_part = list(str(self)[-1])
-        res = {
-            pronoun:
-                Verb(
-                    first_part+tense[pronoun][0]+second_part+tense[pronoun][1],
-                    translation=self.translation+'.'+pronoun+'.'+name_tense,
-                    add_dictionnary=False,
-                    extend_variations=self,
-                    check_rules=False,
-                    ) 
-            for pronoun in tense.keys()
-            }
-        return res
+    def conjugate(
+        self,
+        ):
+        pass
