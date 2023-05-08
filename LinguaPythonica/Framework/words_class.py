@@ -1,9 +1,9 @@
-from sounds import (
+from LinguaPythonica.RedDjinn.sounds import (
     CONS,
     VOWE,
 )
 
-from sounds_class import (
+from LinguaPythonica.Framework.sounds_class import (
     Vowel,
     Consonant,
 )

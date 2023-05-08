@@ -1,14 +1,14 @@
-from sounds import (
+from LinguaPythonica.RedDjinn.sounds import (
     CONS_list,
     VOWE_list,
 )
 
-from words_class import (
+from LinguaPythonica.Framework.words_class import (
     Word,
     Verb,
 )
 
-from words_class_specific import (
+from LinguaPythonica.RedDjinn.words_class_specific import (
     Copula,
     PROUN,
 )

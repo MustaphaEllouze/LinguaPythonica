@@ -1,23 +1,27 @@
-from sounds import (
+from LinguaPythonica.RedDjinn import (
+    sounds
+)
+
+from LinguaPythonica.RedDjinn.sounds import (
     CONS_list,
     VOWE_list,
 )
-from words_class import (
+from LinguaPythonica.Framework.words_class import (
     Word,
     Verb,
 )
 
-from words_class_specific import (
+from LinguaPythonica.RedDjinn.words_class_specific import (
     Copula,
 )
 
-from tense import (
+from LinguaPythonica.RedDjinn.tense import (
     Tense,
 )
 
-from words import WORDS
+from LinguaPythonica.RedDjinn.words import WORDS
 
-from evolutions import (
+from LinguaPythonica.RedDjinn.evolutions import (
     evolution,
     evolution_str,
     evolution_dict,

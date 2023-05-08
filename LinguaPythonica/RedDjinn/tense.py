@@ -1,11 +1,11 @@
-from words_class_specific import (
+from LinguaPythonica.RedDjinn.words_class_specific import (
     PROUN,
 )
-from concepts_specific import (
+from LinguaPythonica.RedDjinn.concepts_specific import (
     GEND,
 )
 
-from words_class import (
+from LinguaPythonica.Framework.words_class import (
     Verb,
 )
 

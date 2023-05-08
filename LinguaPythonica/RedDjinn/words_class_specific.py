@@ -1,6 +1,6 @@
-from words_class import Word
+from LinguaPythonica.Framework.words_class import Word
 
-from concepts_specific import (
+from LinguaPythonica.RedDjinn.concepts_specific import (
     MOODS,
     GEND,
 )
