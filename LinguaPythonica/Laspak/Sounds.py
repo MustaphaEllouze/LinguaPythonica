@@ -1,9 +1,19 @@
+from abc import ABC,abstractmethod
 from LinguaPythonica.Framework.Sounds import(
+    Sound,
     Consonant,
     Vowel,
 )
 
-class LaspakConsonant(Consonant):
+class LaspakSound(Sound,ABC):
+    """Sons du Laspak
+    """
+
+    @abstractmethod
+    def __init__(self):
+        pass
+
+class LaspakConsonant(Consonant,LaspakSound):
     """Consonnes du Laspak
     """
 
@@ -15,7 +25,7 @@ class LaspakConsonant(Consonant):
         super().__init__(*args,**kwargs)
         LaspakConsonant.laspak_consonants[self.symbol]=self
 
-class LaspakVowel(Vowel):
+class LaspakVowel(Vowel,LaspakSound):
     """Voyelles du Laspak
     """
 
