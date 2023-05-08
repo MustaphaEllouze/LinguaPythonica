@@ -44,21 +44,21 @@ class Consonant(Sound):
     consonants = {}
 
     def __init__(self,
-                symbol,
-                stop        =False,
-                fric        =False,
-                liquid      =False,
-                nasal       =False,
-                voiced      =False,
-                unvoiced    =False,
-                labial      =False,
-                dental      =False,
-                alveo       =False,
-                postalveo   =False,
-                palatal     =False,
-                velar       =False,
-                uvular      =False,
-                glottal     =False,
+                symbol      :str,
+                stop        :bool=False,
+                fric        :bool=False,
+                liquid      :bool=False,
+                nasal       :bool=False,
+                voiced      :bool=False,
+                unvoiced    :bool=False,
+                labial      :bool=False,
+                dental      :bool=False,
+                alveo       :bool=False,
+                postalveo   :bool=False,
+                palatal     :bool=False,
+                velar       :bool=False,
+                uvular      :bool=False,
+                glottal     :bool=False,
                 ):
 
         # Gestion des exceptions
@@ -120,13 +120,13 @@ class Vowel(Sound):
 
     def __init__(
                 self,
-                symbol      =False,
-                front       =False,
-                central     =False,
-                back        =False, 
-                close       =False, 
-                semiclose   =False,
-                open        =False,
+                symbol      :str,
+                front       :bool=False,
+                central     :bool=False,
+                back        :bool=False, 
+                close       :bool=False, 
+                semiclose   :bool=False,
+                open        :bool=False,
                 ):
         
         # Gestion des exceptions
