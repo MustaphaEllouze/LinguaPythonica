@@ -8,6 +8,7 @@ from abc import (
 from collections import defaultdict
 
 from LinguaPythonica.Framework.Sounds import Sound
+from LinguaPythonica.Framework.Words import Word
 
 class Word(ABC):
     """Représente un mot. Classe abstraite.
@@ -66,8 +67,9 @@ class Word(ABC):
         else:
             self.variations = None
         
-        # Ajout dans le dictionnaire de traduction
+        # Ajout dans les dictionnaires de classe
         Word.translations[translation].append(self)
+        Word.dict_words[tuple(letters)]=self
     
     def __str__(self)->str:
         res = ''
@@ -89,6 +91,46 @@ class Word(ABC):
             return None
 
     @abstractmethod
+    def check_rules(self):
+        """Vérifie que les mots obéissent à la morphosyntaxique
+        """
+        pass
+    
+class Root(Word,ABC):
+    
+    # Dictionnaire des mots
+    dict_root = {}     # Clés = Str ; Value = self 
+
+    def __init__(
+                self,
+                letters                 :list[Sound],
+                translation             :str        =   '',
+                
+            ):
+        super().__init__(
+            letters=letters,
+            translation=translation,
+            add_dictionnary=True,
+            extend_variations=None,
+        )
+        Root.dict_root[tuple(letters)]=self
+
+class DerivableWord(Word,ABC):
+    
+    def __init__(
+            self,
+            letters: list[Sound],
+            extend_variations: Word,
+            translation: str = '',
+            ):
+        super().__init__(
+            letters=letters,
+            translation=translation,
+            add_dictionnary=False,
+            extend_variations=extend_variations
+            )
+
+    @abstractmethod
     def plural(self):
         """Renvoie le pluriel du mot
         """
@@ -97,12 +139,6 @@ class Word(ABC):
     @abstractmethod
     def substantive(self):
         """Renvoie le substantif du mot
-        """
-        pass
-
-    @abstractmethod
-    def check_rules(self):
-        """Vérifie que les mots obéissent à la morphosyntaxique
         """
         pass
             
