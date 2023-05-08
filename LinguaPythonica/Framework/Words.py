@@ -9,6 +9,10 @@ from collections import defaultdict
 
 from LinguaPythonica.Framework.Sounds import Sound
 from LinguaPythonica.Framework.Words import Word
+from LinguaPythonica.Framework.AbstractConcepts import (
+    Gender,
+    Person,
+)
 
 class Word(ABC):
     """Représente un mot. Classe abstraite.
@@ -197,27 +201,34 @@ class Verb(Word,ABC):
         """Renvoie un dictionnaire de conjugaison"""
         pass
 
-# class Pronoun(Word,ABC):
-#     """Représente des Pronoms
-#     """
-#     
-#     pronouns = {}
-# 
-#     def __init__(self,
-#                 letters,
-#                 translation=None,
-#                 add_dictionnary=True,
-#                 person=1,
-#                 plural=False,
-#                 gender=GEND['FEM'],
-#                 tag=''
-#                 ):
-#         
-# 
-#         super().__init__(letters, translation, add_dictionnary)
-#         self.is_pronoun = True
-#         self.person=person
-#         self.plural = plural
-#         self.gender = gender
-#         self.tag=tag
-#         Pronoun.pronouns.append(self)
+class Pronoun(Word,ABC):
+    """Représente des Pronoms
+    """
+    
+    pronouns = {}
+
+    def __init__(self,
+                letters,
+                person:Person,
+                gender:Gender,
+                plural:bool,
+                tag:str,
+                translation:str=None,
+                ):
+        
+        # Création du pronom
+        super().__init__(
+            letters,
+            translation=translation,
+            add_dictionnary=True,
+            extend_variations=None,
+            check_rules=False,
+        )
+
+        # Ajout des attributs
+        self.person=person
+        self.plural = plural
+        self.gender = gender
+        self.tag=tag
+
+        Pronoun.pronouns[self.tag]=self
