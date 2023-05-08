@@ -135,9 +135,11 @@ class Verb(Word,ABC):
             extend_variations=extend_variations,
             check_rules=check_rules,
         )
+        self.conjugation = self.conjugate()
     
     @abstractmethod
     def conjugate(
         self,
         ):
+        """Renvoie un dictionnaire de conjugaison"""
         pass
