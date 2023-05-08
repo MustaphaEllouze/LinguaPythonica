@@ -160,10 +160,8 @@ VOWE_list = [
 
 CONS = {}
 for con in CONS_list:
-    globals()[con.symbol] = con
     CONS[con.symbol] = con
 
 VOWE = {}
 for vow in VOWE_list:
-    globals()[vow.symbol] = vow
     VOWE[vow.symbol] = vow
