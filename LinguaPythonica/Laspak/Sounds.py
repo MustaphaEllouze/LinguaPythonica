@@ -24,6 +24,7 @@ class LaspakConsonant(Consonant,LaspakSound):
         """Constructeur, la construction est gérée par Consonant"""
         super().__init__(*args,**kwargs)
         LaspakConsonant.laspak_consonants[self.symbol]=self
+        LaspakConsonant.laspak_consonants[self.symbol.upper()]=self
 
 class LaspakVowel(Vowel,LaspakSound):
     """Voyelles du Laspak
@@ -36,4 +37,5 @@ class LaspakVowel(Vowel,LaspakSound):
         """Constructeur, la construction est gérée par Vowel"""
         super().__init__(*args,**kwargs)
         LaspakVowel.laspak_vowels[self.symbol]=self
+        LaspakVowel.laspak_vowels[self.symbol.upper()]=self
 

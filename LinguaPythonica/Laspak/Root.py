@@ -50,4 +50,7 @@ class LaspakRoot(Root):
             letter3:str,
     ):
         return (set([letter1,letter2,letter3]).issubset(set(LASPAK_CONSONANTS_DICT.keys())))
+
+    def __str__(self) -> str:
+        return super().__str__().upper()
     

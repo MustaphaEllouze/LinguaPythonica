@@ -91,6 +91,7 @@ class Consonant(Sound):
 
         # Update des attributs de classe
         Consonant.consonants[self.symbol]=self
+        Consonant.consonants[self.symbol.upper()]=self
 
 
 class Vowel(Sound): 
@@ -150,3 +151,4 @@ class Vowel(Sound):
 
         # Attributs de classe
         Vowel.vowels[self.symbol]=self
+        Vowel.vowels[self.symbol.upper()]=self
