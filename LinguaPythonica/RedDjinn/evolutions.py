@@ -2,7 +2,7 @@ from LinguaPythonica.Framework.words_class import (
     Word,
 )
 
-from LinguaPythonica.Framework.sounds_class import (
+from LinguaPythonica.Framework.Sounds import (
     Vowel,
     Consonant,
 )

@@ -1,4 +1,4 @@
-from LinguaPythonica.Framework.sounds_class import(
+from LinguaPythonica.Framework.Sounds import(
     Consonant,
     Vowel,
 )
