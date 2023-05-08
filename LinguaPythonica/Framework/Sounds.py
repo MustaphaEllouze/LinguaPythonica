@@ -1,4 +1,15 @@
-class Consonant :
+from abc import ABC,abstractmethod
+
+class Sound(ABC):
+    """Représente un son (voyelle ou consonne).
+    Classe abstraite
+    """
+
+    @abstractmethod
+    def __init__(self) -> None:
+        pass
+
+class Consonant(Sound):
     """Représente une consonne
 
     Class Attributes : 
@@ -79,7 +90,7 @@ class Consonant :
         Consonant.consonants[self.symbol]=self
 
 
-class Vowel : 
+class Vowel(Sound): 
     """Représente une voyelle
 
     Class Attributes : 
