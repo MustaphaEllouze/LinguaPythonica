@@ -6,7 +6,7 @@ from LinguaPythonica.RedDjinn.sounds import (
     CONS_list,
     VOWE_list,
 )
-from LinguaPythonica.Framework.Words import (
+from LinguaPythonica.RedDjinn.Words import (
     Word,
     Verb,
 )
@@ -19,7 +19,7 @@ from LinguaPythonica.RedDjinn.tense import (
     Tense,
 )
 
-from LinguaPythonica.RedDjinn.words import WORDS
+from LinguaPythonica.RedDjinn.dictionanry import WORDS
 
 from LinguaPythonica.RedDjinn.evolutions import (
     evolution,

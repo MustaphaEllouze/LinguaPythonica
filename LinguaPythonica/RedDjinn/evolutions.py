@@ -1,4 +1,4 @@
-from LinguaPythonica.Framework.Words import (
+from LinguaPythonica.RedDjinn.Words import (
     Word,
 )
 

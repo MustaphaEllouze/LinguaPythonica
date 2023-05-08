@@ -5,7 +5,7 @@ from LinguaPythonica.RedDjinn.concepts_specific import (
     GEND,
 )
 
-from LinguaPythonica.Framework.Words import (
+from LinguaPythonica.RedDjinn.Words import (
     Verb,
 )
 
