@@ -32,6 +32,7 @@ class Consonant(Sound):
         - postalveo     :   bool    : Post-alvéolaire  
         - palatal       :   bool    : Palatale  
         - velar         :   bool    : Vélaire  
+        - uvular        :   bool    : Uvulaire  
         - glottal       :   bool    : Glottale  
 
     Raises:
@@ -56,6 +57,7 @@ class Consonant(Sound):
                 postalveo   =False,
                 palatal     =False,
                 velar       =False,
+                uvular      =False,
                 glottal     =False,
                 ):
 
@@ -64,8 +66,8 @@ class Consonant(Sound):
             raise Exception('Mauvais type stop fric liquid nasal')                
         if(sum([voiced,unvoiced])!=1):
             raise Exception('Mauvais type voiced unvoiced')
-        if(sum([labial,dental,alveo,postalveo,palatal,velar,glottal])!=1):
-            raise Exception('Mauvais type labial alveo postalveo palatal velar glottal dental')
+        if(sum([labial,dental,alveo,postalveo,palatal,velar,uvular,glottal])!=1):
+            raise Exception('Mauvais type labial alveo postalveo palatal velar glottal dental uvular')
 
         # Attributs d'instances
         self.symbol = symbol
@@ -84,6 +86,7 @@ class Consonant(Sound):
         self.postalveo = postalveo
         self.palatal = palatal
         self.velar = velar
+        self.uvular = uvular
         self.glottal = glottal
 
         # Update des attributs de classe
