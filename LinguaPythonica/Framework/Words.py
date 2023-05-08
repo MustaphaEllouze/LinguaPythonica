@@ -8,7 +8,6 @@ from abc import (
 from collections import defaultdict
 
 from LinguaPythonica.Framework.Sounds import Sound
-from LinguaPythonica.Framework.Words import Word
 from LinguaPythonica.Framework.AbstractConcepts import (
     Gender,
     Person,
@@ -69,7 +68,7 @@ class Word(ABC):
 
         # S'il faut ajouter au dictionnaire
         if(add_dictionnary) : 
-            Word.words[str(self)]=self
+            Word.dict_words[str(self)]=self
             self.variations = [self]
 
             # Si le mot est une variation    
@@ -80,7 +79,6 @@ class Word(ABC):
         
         # Ajout dans les dictionnaires de classe
         Word.translations[translation].append(self)
-        Word.dict_words[tuple(letters)]=self
     
     def __str__(self)->str:
         res = ''

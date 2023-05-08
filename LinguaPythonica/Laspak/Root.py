@@ -1,7 +1,8 @@
 from LinguaPythonica.Framework.Words import Root
 
-from LinguaPythonica.Laspak.Sounds import (
-    LaspakConsonant,
+from LinguaPythonica.Laspak.Assembling.sounds_inventory import (
+    LASPAK_CONSONANTS_DICT,
+    LASPAK_VOWELS_DICT,
 )
 
 class LaspakRoot(Root):
@@ -11,23 +12,42 @@ class LaspakRoot(Root):
     
     def __init__(
             self,
-            letter1: LaspakConsonant,
-            letter2: LaspakConsonant,
-            letter3: LaspakConsonant,
+            letter1: str,
+            letter2: str,
+            letter3: str,
             translation: str = ''
             ):
         """
         Args:
-            letter1 (LaspakConsonant): Première consonne de la racine
-            letter2 (LaspakConsonant): Deuxième consonne de la racine
-            letter3 (LaspakConsonant): Troisième consonne de la racine
+            letter1 (str): Première consonne de la racine
+            letter2 (str): Deuxième consonne de la racine
+            letter3 (str): Troisième consonne de la racine
             translation (str, optional): Traduction de la racine. Defaults to ''.
         """
+
+        if self.check_rules(letter1=letter1,letter2=letter2,letter3=letter3):
+            pass
+        else:
+            raise Exception(f"Les lettres choisies pour la racine sont fausses : {(letter1,letter2,letter3)}")
+
         # Construction
         super().__init__(
-            letters=[letter1,letter2,letter3],
+            letters=[
+                LASPAK_CONSONANTS_DICT[letter1],
+                LASPAK_CONSONANTS_DICT[letter2],
+                LASPAK_CONSONANTS_DICT[letter3],
+                ],
             translation=translation,
             )
         
         # Remplissage du dictionnaire
         LaspakRoot.dict_roots[translation]=self
+    
+    def check_rules(
+            self,
+            letter1:str,
+            letter2:str,
+            letter3:str,
+    ):
+        return (set([letter1,letter2,letter3]).issubset(set(LASPAK_CONSONANTS_DICT.keys())))
+    
