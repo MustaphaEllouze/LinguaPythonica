@@ -196,3 +196,28 @@ class Verb(Word,ABC):
         ):
         """Renvoie un dictionnaire de conjugaison"""
         pass
+
+# class Pronoun(Word,ABC):
+#     """Représente des Pronoms
+#     """
+#     
+#     pronouns = {}
+# 
+#     def __init__(self,
+#                 letters,
+#                 translation=None,
+#                 add_dictionnary=True,
+#                 person=1,
+#                 plural=False,
+#                 gender=GEND['FEM'],
+#                 tag=''
+#                 ):
+#         
+# 
+#         super().__init__(letters, translation, add_dictionnary)
+#         self.is_pronoun = True
+#         self.person=person
+#         self.plural = plural
+#         self.gender = gender
+#         self.tag=tag
+#         Pronoun.pronouns.append(self)
