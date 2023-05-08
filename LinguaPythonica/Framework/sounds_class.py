@@ -2,7 +2,7 @@ class Consonant :
     """Représente une consonne
 
     Class Attributes : 
-        - consonants    : dict{str:Consonant}   : Dictionnaire
+        - consonants    : dict{str:Consonant}   : Clés = symboles
 
     Attributes : 
         - symbol        :   str     : Symbole qui représente
@@ -78,188 +78,61 @@ class Consonant :
         # Update des attributs de classe
         Consonant.consonants[self.symbol]=self
 
+
 class Vowel : 
+    """Représente une voyelle
+
+    Class Attributes : 
+        - vowels        : dict{str:Vowel}   : Clés = symboles
+
+    Attributes : 
+        - symbol        :   str     : Symbole qui représente   
+
+        - front         :   bool    : 
+        - central       :   bool    : 
+        - back          :   bool    : 
+
+        - close         :   bool    : 
+        - semiclose     :   bool    : 
+        - open          :   bool    : 
+
+
+    Raises:
+        Exception: Si pas exactement 1 parmi front,central,back
+        Exception: Si pas exactement 1 parmi close,open,semiclose
+    """
 
     vowels = {}
 
-    def __init__(self,
+    def __init__(
+                self,
                 symbol      =False,
                 front       =False,
                 central     =False,
                 back        =False, 
                 close       =False, 
-                semiclose    =False,
+                semiclose   =False,
                 open        =False,
                 ):
         
-        self.symbol = symbol
-
+        # Gestion des exceptions
         if(sum([front,central,back])!=1):
-            raise Exception('Mauvais type front central back')
+            raise Exception('Mauvais type front,central,back')
         
         if(sum([close,open,semiclose])!=1):
-            raise Exception('Mauvais type rounded unrounded')
+            raise Exception('Mauvais type close,open,semiclose')
+
+
+        # Attributs d'instance
+        self.symbol = symbol
 
         self.front = front
         self.central = central
         self.back = back
+
         self.close = close
         self.open = open
         self.semiclose = semiclose
 
+        # Attributs de classe
         Vowel.vowels[self.symbol]=self
-
-CONS_list = [
-    Consonant(
-        'm',
-        nasal=True,
-        labial=True,
-        voiced=True,
-    ),
-    
-    Consonant(
-        'n',
-        nasal=True,
-        alveo=True,
-        voiced=True,
-    ),
-
-    Consonant(
-        'p',
-        stop=True,
-        labial=True,
-        unvoiced=True,
-    ),
-
-    Consonant(
-        't',
-        stop=True,
-        alveo=True,
-        unvoiced=True,
-    ),
-    
-    Consonant(
-        'd',
-        stop=True,
-        alveo=True,
-        voiced=True,
-    ),
-    
-    Consonant(
-        'k',
-        stop=True,
-        velar=True,
-        unvoiced=True,
-    ),
-    
-    Consonant(
-        'g',
-        stop=True,
-        velar=True,
-        voiced=True,
-    ),
-    
-    Consonant(
-        "'",
-        stop=True,
-        glottal=True,
-        voiced=True,
-    ),
-
-    Consonant(
-        's',
-        fric=True,
-        alveo=True,
-        unvoiced=True,
-    ),
-
-    
-    Consonant(
-        'z',
-        fric=True,
-        alveo=True,
-        voiced=True,
-    ),
-
-    Consonant(
-        'ch',
-        fric=True,
-        postalveo=True,
-        unvoiced=True,
-    ),
-
-    Consonant(
-        'f',
-        fric=True,
-        labial=True,
-        unvoiced=True,
-    ),
-
-    Consonant(
-        'th',
-        fric=True,
-        dental=True,
-        unvoiced=True,
-    ),
-
-    Consonant(
-        'y',
-        liquid=True,
-        palatal=True,
-        voiced=True,
-    ),
-
-    Consonant(
-        'w',
-        liquid=True,
-        labial=True,
-        voiced=True,
-    ),
-
-    Consonant(
-        'l',
-        liquid=True,
-        alveo=True,
-        unvoiced=True,
-    ),
-    
-    Consonant(
-        'r',
-        liquid=True,
-        alveo=True,
-        voiced=True,
-    ),
-]
-
-VOWE_list = [
-    Vowel(
-        'a',
-        central=True,
-        open=True,
-    ),
-    Vowel(
-        'é',
-        front=True,
-        semiclose=True,
-    ),
-    Vowel(
-        'i',
-        front=True,
-        close=True,
-    ),
-    Vowel(
-        'o',
-        back=True,
-        semiclose=True,
-    ),
-    Vowel(
-        'u',
-        back=True,
-        close=True,
-    ),
-    Vowel(
-        'e',
-        central=True,
-        semiclose=True,
-    ),
-]
