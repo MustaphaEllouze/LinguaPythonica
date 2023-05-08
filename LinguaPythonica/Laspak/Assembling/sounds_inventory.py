@@ -197,7 +197,7 @@ LASPAK_VOWELS = [
     ),
 ]
 
-# Dictionnaire pour récupérer à partir des symboles
+# Dictionnaire pour récupérer à partir des symboles -- On rajoute aussi les majuscules
 LASPAK_CONSONANTS_DICT = {lettre.symbol:lettre for lettre in LASPAK_CONSONANTS}
 LASPAK_CONSONANTS_DICT = dict(LASPAK_CONSONANTS_DICT,**{lettre.symbol.upper():lettre for lettre in LASPAK_CONSONANTS})
 LASPAK_VOWELS_DICT     = {lettre.symbol:lettre for lettre in LASPAK_VOWELS}

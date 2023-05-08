@@ -49,8 +49,11 @@ class LaspakRoot(Root):
             letter2:str,
             letter3:str,
     ):
+        """Checker de racine valide. On vérifie que les lettres passées sont des consonnes définies.
+        """
         return (set([letter1,letter2,letter3]).issubset(set(LASPAK_CONSONANTS_DICT.keys())))
 
     def __str__(self) -> str:
+        """Racine --> Majuscule"""
         return super().__str__().upper()
     

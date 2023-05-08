@@ -1,6 +1,8 @@
 from LinguaPythonica.Laspak.Root import LaspakRoot
 
 roots_input = [
+    # Rajouter dans cet ordre :
+    # letter1, letter2, letter3, traduction
     ('Q','CH','N','feu',),
     ('G','L','R','froid',),
     ('B','K','R','foudre',),
@@ -153,4 +155,5 @@ roots_input = [
     ('M','H','T','douleur',),
 ]
 
+# On assemble ici toutes les racines
 LASPAK_ROOTS = [LaspakRoot(letter1=tup[0],letter2=tup[1],letter3=tup[2],translation=tup[3]) for tup in roots_input]
